@@ -25,6 +25,7 @@ $ python3 attendance.py //MacOS or Linux
 > python attendance.py //Windows
 ```
 From the terminal.
+The script marks your attendance, and maintains a log in a file called attendance.csv in the root folder as well.
 
 # NOTE
 
