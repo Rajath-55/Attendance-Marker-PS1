@@ -81,6 +81,8 @@ class MarkAttendance():
         try:
             submit_marker = WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH,"//a[contains(text(),'Submit attendance')]")))
             submit_marker.click()
+            present = WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.ID, "id_status_1197"))).click()
+            WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.NAME,"submitbutton"))).click()
         except TimeoutException:
             print("Attendance has already been marked for today")
             writer.writerow(attendance_row)
@@ -102,10 +104,10 @@ def morning_attendance():
 
 
 if __name__ == "__main__":
-    schedule.every(1).day.at("10:00").do(morning_attendance)
+    # schedule.every(1).day.at("10:00").do(morning_attendance)
 
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    # while True:
+    #     schedule.run_pending()
+    #     time.sleep(1)
     
-    # morning_attendance()
+    morning_attendance()
