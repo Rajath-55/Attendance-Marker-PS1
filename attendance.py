@@ -23,8 +23,8 @@ class MarkAttendance():
         self.options.add_experimental_option('useAutomationExtension', False)
         self.options.add_argument('--disable-blink-features=AutomationControlled')
         self.ps1_url = 'https://lms-practice-school.bits-pilani.ac.in/login/index.php'
-        self.options.binary_location = '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser'
-        driver_path = '/Users/rajathv/Documents/chromedriver'
+        # self.options.binary_location = '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser'
+        driver_path = 'PATH_TO_DRIVER'
         self.driver = webdriver.Chrome(options = self.options, executable_path = driver_path)
         stealth(self.driver,
         languages=["en-US", "en"],
@@ -81,8 +81,9 @@ class MarkAttendance():
         try:
             submit_marker = WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH,"//a[contains(text(),'Submit attendance')]")))
             submit_marker.click()
-            present = WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.ID, "id_status_1197"))).click()
-            WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.NAME,"submitbutton"))).click()
+            # RADIO BUTTON PART
+            # present = WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.ID, "id_status_1197"))).click()
+            # WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.NAME,"submitbutton"))).click()
         except TimeoutException:
             print("Attendance has already been marked for today")
             writer.writerow(attendance_row)

@@ -41,3 +41,18 @@ if __name__ == "__main__":
 ```
 Replace the "10:00" string with any time of your choice in 24 hr format, and upon running the script, attendance gets marked at that time everyday.
 
+- Do remember to download chromedriver (Or any other browserdriver compatible with selenium) and change the path to that:
+
+```python
+# self.options.binary_location = '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser' commented this because this was only for brave browser .
+  driver_path = 'PATH_TO_DRIVER'
+
+```
+
+Some stations have an additional radio button to be checked after clicking submit attendance, and if that is the case with your station, simply uncomment the following in attendance.py:
+
+```python
+ # present = WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.ID, "id_status_1197"))).click()
+ # WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.NAME,"submitbutton"))).click()
+
+ 
