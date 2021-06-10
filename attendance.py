@@ -105,7 +105,7 @@ def morning_attendance():
 
 
 if __name__ == "__main__":
-    schedule.every(1).day.at("10:00").do(morning_attendance)
+    schedule.every(1).day.at("09:45").do(morning_attendance)
 
     while True:
         schedule.run_pending()

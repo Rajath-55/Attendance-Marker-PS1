@@ -9,7 +9,7 @@ $ pip3 install requirements.txt //MacOS or Linux
 Make a file constants.py and copy the following code in it:
 ```python
    data = {
-       'username' : YOUR_EMAIL_ID_HERE,
+       'email' : YOUR_EMAIL_ID_HERE,
        'password' : YOUR_PASSWORD_HERE,
    } 
 
