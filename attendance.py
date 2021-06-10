@@ -23,7 +23,7 @@ class MarkAttendance():
         self.options.add_experimental_option('useAutomationExtension', False)
         self.options.add_argument('--disable-blink-features=AutomationControlled')
         self.ps1_url = 'https://lms-practice-school.bits-pilani.ac.in/login/index.php'
-        self.options.binary_location = '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser'
+        # self.options.binary_location = '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser'
         driver_path = '/Users/rajathv/Documents/chromedriver'
         self.driver = webdriver.Chrome(options = self.options, executable_path = driver_path)
         stealth(self.driver,
@@ -105,7 +105,7 @@ def morning_attendance():
 
 
 if __name__ == "__main__":
-    schedule.every(1).day.at("09:45").do(morning_attendance)
+    schedule.every(1).day.at("10:00").do(morning_attendance)
 
     while True:
         schedule.run_pending()
